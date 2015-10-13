@@ -1,13 +1,61 @@
-/*
+        /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/*
+        /*
     Created on : Oct 5, 2015, 6:01:15 PM
     Author     : samuel
 */
 
-.card-panel hoverable{
-
-}
+        @media(max-width: 400px) {
+            #login {
+                /*            top: 50%;*/
+                /*            left: 35%;*/
+                /*            font-size: 20px;*/
+                /*            display: block;*/
+                /*            position:absolute;*/
+                /*            body: aqua;*/
+            }
+        }
+        @media(min-width: 1300px) {
+            #login {
+                font-size: 40px;
+                top: 35%;
+                left: 35%;
+                position: absolute;
+            }
+        }
+        @media(min-width: 1000px) {
+            #login {
+                font-size: 40px;
+                top: 35%;
+                left: 35%;
+                position: absolute;
+            }
+        }
+        #login_button {
+            font-size: 16px;
+            position: relative;
+            background-color: #dd2c00;
+        }
+        #username:focus {
+            border-bottom: 1px solid orange;
+            -webkit-box-shadow: 0 1px 0 0 orange;
+            -moz-box-shadow: 0 1px 0 0 orange;
+            box-shadow: 0 1px 0 0 orange;
+            color: darkorange;
+        }
+        #username:focus ~ label {
+            color: orange;
+        }
+        #password:focus {
+            border-bottom: 1px solid orange;
+            -webkit-box-shadow: 0 1px 0 0 orange;
+            -moz-box-shadow: 0 1px 0 0 orange;
+            box-shadow: 0 1px 0 0 orange;
+            color: darkorange;
+        }
+        #password:focus ~ label {
+            color: orange;
+        }
