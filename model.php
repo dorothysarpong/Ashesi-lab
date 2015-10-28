@@ -7,35 +7,53 @@
  */
 include ("Adb.php");
 
-class Equipment extends Adb{
+class Product extends Adb{
 
     /**
-     *
-     * @param type $id product id
-     * @param type $name product name
-     * @param type $desc description of the product
-     * @param type $price price of the product
-     * @param type $main  maintenance date
-     * @param type $man  manufacturer
-     * @param type $loc location
-     * @param type $cat category
+     * Adds a product to the database
+     * @param varchar $serial serial number of a product
+     * @param varchar $name   name of the product
+     * @param varchar $desc   description of the product
+     * @param varchar $date   maintenance date of the product
+     * @param varchar $man    manufacturer of the product
+     * @param int     $loc    location of the product;
+     * @param link    $link   link of a tutorial to use the product
      */
-    function add($id, $name, $desc, $price, $main, $man, $loc, $cat) {
-        $string = "insert into equipments (e_id, e_name, "
-                . "description, price, maintenance,manufacturer,location,category )"
-                . " values ('$id', '$name', '$desc', '$price', '$main','$man','$loc','$cat')";
+    function add($serial, $name, $desc, $date, $man, $loc, $link) {
+        $string = "insert into product (serial_no, "
+                . "name,description,date,man,loc,link )"
+                . "values ('$serial', '$name', '$desc', '$date','$manufacturer','$location','$link')";
         if ($this->query($string) == false) {
             echo "Error inserting";
         } else {
             echo "Insert success";
         }
     }
-}
 
-$obj = new Equipment();
+//    /**
+//     * Deletes a product from the database
+//     * @param int $id id of the product
+//     */
+//    function delete($id){
+//
+//    }
 
-$obj->add("PAT12j3", "PUTTY", "SOME TEST", "190", "9/1/14", "OS", "ELEC", "nigga");
 
 
 
+//    $obj = new Product();
+//    $obj->add("KP09888HUIG76758","charger","some test","10/28/2015","ASUS",3,"www.google.com");
 
+//   funtiondelete($id){
+//    $string = " delete from product where product_id ='$id'";
+//    if($this->query($string)==false){
+//    echo "Error deleting";
+//    }
+//       else{
+//            echo "Deleted";
+//        }
+//   }
+
+//$obj = new Equipment();
+
+//  $obj->add("PAT12j3", "PUTTY", "SOME TEST", "190", "9/1/14", "OS", "ELEC", "nigga");
