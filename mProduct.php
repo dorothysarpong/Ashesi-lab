@@ -65,7 +65,9 @@ class Product extends Adb{
         }
     }
 
-   // function view pr
+   function view_all(){
+
+   }
 }
 
 
