@@ -30,30 +30,22 @@ class Product extends Adb{
         }
     }
 
-//    /**
-//     * Deletes a product from the database
-//     * @param int $id id of the product
-//     */
-//    function delete($id){
-//
-//    }
+    /**
+     * Deletes a product from the database
+     * @param int $id id of the product
+     */
+    function delete($id){
+        $string = "delete from product where product_id='$id'";
+        if($this->query($string) == false){
+            echo "Error deleting";
+        } else{
+            echo "Delete success";
+        }
+    }
+}
 
-
-
-
-//    $obj = new Product();
+//test code
+    $obj = new Product();
 //    $obj->add("KP09888HUIG76758","charger","some test","10/28/2015","ASUS",3,"www.google.com");
+    $obj->delete(1);
 
-//   funtiondelete($id){
-//    $string = " delete from product where product_id ='$id'";
-//    if($this->query($string)==false){
-//    echo "Error deleting";
-//    }
-//       else{
-//            echo "Deleted";
-//        }
-//   }
-
-//$obj = new Equipment();
-
-//  $obj->add("PAT12j3", "PUTTY", "SOME TEST", "190", "9/1/14", "OS", "ELEC", "nigga");
