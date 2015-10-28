@@ -66,8 +66,8 @@ and open the template in the editor.
                                 }
                                 .intro {
                                     text-align: center;
-                                    padding-top: 8%;
-                                    padding-bottom: 8%;
+                                    padding-top: 5%;
+                                    padding-bottom: 5%;
                                     margin-bottom: 10px;
                                     background: #ff3d00;
                                     color: white;
@@ -76,6 +76,7 @@ and open the template in the editor.
                                 #view:hover {
                                     color: #ff3d00;
                                     cursor: hand;
+                                    background-size: 50px 50px;
                                 }
                                 #msgs:hover {
                                     color: #ff3d00;
