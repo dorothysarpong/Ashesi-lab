@@ -20,9 +20,9 @@ class Product extends Adb{
      * @param link    $link   link of a tutorial to use the product
      */
     function add($serial, $name, $desc, $date, $man, $loc, $link) {
-        $string = "insert into product (serial_no, "
-                . "name,description,date,man,loc,link )"
-                . "values ('$serial', '$name', '$desc', '$date','$manufacturer','$location','$link')";
+        $string = "insert into product (serial_no,"
+                . "name,description,date,manufacturer,location,link)"
+                . "values ('$serial', '$name', '$desc', '$date','$man','$loc','$link')";
         if ($this->query($string) == false) {
             echo "Error inserting";
         } else {
@@ -45,7 +45,7 @@ class Product extends Adb{
 
     /**
      * Updates a product in the database
-     * @param int $id         id of the product
+     * @param int     $id     id of the product
      * @param varchar $serial serial number of the product
      * @param varchar $name   name of product to be updated
      * @param varchar $desc   description of the product
@@ -55,8 +55,8 @@ class Product extends Adb{
      * @param varchar $link   link of a tutorial to use the product
      */
     function update($id,$serial, $name, $desc, $date, $man, $loc, $link) {
-        $string = "update product set serial_no='$serial' "
-                . "name='$name',description='$desc',date='$date',man='$man',loc='$loc',link='$link'"
+        $string = "update product set serial_no='$serial',"
+                . "name='$name',description='$desc',date='$date',manufacturer='$man',location='$loc',link='$link'"
                 . "where product_id='$id'";
         if ($this->query($string) == false) {
             echo "Error updating";
@@ -64,6 +64,8 @@ class Product extends Adb{
             echo "update success";
         }
     }
+
+   // function view pr
 }
 
 
@@ -71,4 +73,5 @@ class Product extends Adb{
 //test code
     $obj = new Product();
 //    $obj->add("KP09888HUIG76758","charger","some test","10/28/2015","ASUS",3,"www.google.com");
-    $obj->delete(1);
+    $obj->update(2, "xxx", "xxx", "xxx", "xxx", "xxxx", "xxx", "xxxxx");
+//    $obj->delete(1);
