@@ -42,10 +42,33 @@ class Product extends Adb{
             echo "Delete success";
         }
     }
+
+    /**
+     * Updates a product in the database
+     * @param int $id         id of the product
+     * @param varchar $serial serial number of the product
+     * @param varchar $name   name of product to be updated
+     * @param varchar $desc   description of the product
+     * @param varchar $date   maintenance date of the product
+     * @param varchar $man    manufacturer of the product
+     * @param varchar $loc    location of the product
+     * @param varchar $link   link of a tutorial to use the product
+     */
+    function update($id,$serial, $name, $desc, $date, $man, $loc, $link) {
+        $string = "update product set serial_no='$serial' "
+                . "name='$name',description='$desc',date='$date',man='$man',loc='$loc',link='$link'"
+                . "where product_id='$id'";
+        if ($this->query($string) == false) {
+            echo "Error updating";
+        } else {
+            echo "update success";
+        }
+    }
 }
+
+
 
 //test code
     $obj = new Product();
 //    $obj->add("KP09888HUIG76758","charger","some test","10/28/2015","ASUS",3,"www.google.com");
     $obj->delete(1);
-
