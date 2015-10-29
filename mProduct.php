@@ -68,17 +68,31 @@ class Product extends Adb{
    /**returns all products in the database
     * @return Data_Set all products in the database
     */
-   function view_product(){
-        $string = "select * from products";
+    function view_product() {
+        $string = "select * from product";
         return $this->query($string);
-   }
+    }
 
+    /**
+     * returns all products in the specified location
+     * @param  int $loc id of the products' location
+     * @return Data_Set all products in the specified location
+     */
+    function view_product_lab($loc) {
+        $string = "select * from product where location='$loc'";
+        return $this->query($string);
+    }
+
+    function search($name){
+        $string = "select * from product where name like '%$name%'";
+        return $this->query($string);
 }
+
 
 
 
 //test code
     $obj = new Product();
 //    $obj->add("KP09888HUIG76758","charger","some test","10/28/2015","ASUS",3,"www.google.com");
-    $obj->update(2, "xxx", "xxx", "xxx", "xxx", "xxxx", "xxx", "xxxxx");
-//    $obj->delete(1);
+//    $obj->update(2, "xxx", "xxx", "xxx", "xxx", "xxxx", "xxx", "xxxxx");
+    $obj->view_product;
