@@ -65,9 +65,14 @@ class Product extends Adb{
         }
     }
 
-   function view_all(){
-
+   /**returns all products in the database
+    * @return Data_Set all products in the database
+    */
+   function view_product(){
+        $string = "select * from products";
+        return $this->query($string);
    }
+
 }
 
 
