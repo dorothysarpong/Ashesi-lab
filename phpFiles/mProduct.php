@@ -83,10 +83,18 @@ class Product extends Adb{
         return $this->query($string);
     }
 
+    /**
+     * Searches the databse for a certain product
+     * @param  varchar $name name of the product
+     * @return Data_Set product that was being searched
+     */
     function search($name){
         $string = "select * from product where name like '%$name%'";
         return $this->query($string);
-}
+    }
+
+
+
 
 
 
