@@ -60,15 +60,15 @@ and open the template in the editor.
                                     background-color: white;
                                 }
                                 #nav_heading {
-                                    font-size: 20px;
+                                    font-size: 16px;
                                     color: #dd2c00;
-                                    margin-left: 4%;
+                                    margin-left: 1%;
                                 }
                                 .intro {
                                     text-align: center;
                                     padding-top: 5%;
                                     padding-bottom: 5%;
-                                    margin-bottom: 5px;
+                                    margin-bottom: 10px;
                                     background: #ff3d00;
                                     color: white;
                                     box-shadow: 2px 2px 1px #888888;
@@ -76,9 +76,12 @@ and open the template in the editor.
                                 #view:hover {
                                     color: #ff3d00;
                                     cursor: hand;
-                                    background-size: 50px 50px;
                                 }
                                 #msgs:hover {
+                                    color: #ff3d00;
+                                    cursor: hand;
+                                }
+                                #dead:hover {
                                     color: #ff3d00;
                                     cursor: hand;
                                 }
