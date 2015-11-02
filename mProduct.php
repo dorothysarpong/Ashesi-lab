@@ -63,6 +63,16 @@ class Product extends Adb {
         }
     }
 
+    /*
+     * 
+     */
+
+//    function student_view_product() {
+//        $string = "select * from product";
+//
+//        return $this->query($string);
+//    }
+
     /* returns all products in the database
      * @return Data_Set all products in the database
      */
@@ -78,29 +88,42 @@ class Product extends Adb {
             $len = mysql_num_rows($this->result);
 
             echo "<table class='centered'>
-                <thead>
-                <tr>
-                <th data-field='name'>Serial no</th>
-                <th data-field='id'>Product Name</th>
-                <th> </th>
-                </tr>
-                </thead>";
+      <thead>
+      <tr>
+      <th data-field='name'>Serial no</th>
+      <th data-field='id'>Product Name</th>
+      <th> </th>
+      </tr>
+      </thead>";
 
             for ($i = 0; $i < $len; $i++) {
+//                $id = json_encode($row['product_id']);
+//              echo  json_encode($row['product_id']);
+
+
                 echo "<tbody>";
-                echo "<tr>";
+                echo "<tr id={$row['product_id']}>";
+//                echo "<td>{$row['product_id']}</td>";
                 echo "<td>{$row['serial_no']}</td>";
                 echo "<td>{$row['name']}</td>";
-                echo "<td><a class='btn-floating btn-large waves-effect waves-light deep-orange accent 2'>"
-                . "<i class='material-icons'>more_horiz</i></a>";
+                echo "<td><button data-target='modals' class='btn"
+                . " modal-trigger btn-floating btn-large waves-effect waves-light deep-orange accent 2' "
+                . "href='#modals' onclick='get_id(" . $row['product_id'] . ")'>"
+                . "<i class='material-icons'> more_horiz </i></buttton>";
                 echo "</tr>";
-
+//
                 $row = mysql_fetch_assoc($this->result);
             }
+//
             echo "</tbody>";
             echo "</table>";
-//                echo"display done";
         }
+    }
+
+    function get_specific_product($id) {
+        $string = "select * from product where product_id ='$id'";
+        
+        return $this->query($string);
     }
 
     /**
@@ -109,7 +132,7 @@ class Product extends Adb {
      * @return Data_Set all products in the specified location
      */
     function view_product_lab($loc) {
-        $string = "select * from product where location='$loc'";
+        $string = "select * from product where location = '$loc'";
         return $this->query($string);
     }
 
@@ -126,7 +149,7 @@ class Product extends Adb {
 }
 
 //test code
-//    $obj = new Product();
-    //    $obj->add("KP09888HUIG76758","charger","some test","10/28/2015","ASUS",3,"www.google.com");
-    //    $obj->update(2, "7878", "samu", "test", "xxx", "xxxx", "xxx", "vb");
-//    $obj->student_view_product();
+//$obj = new Product();
+//    $obj->add("KP09888HUIG76758","charger","some test","10/28/2015","ASUS",3,"www.google.com");
+//    $obj->update(2, "7878", "samu", "test", "xxx", "xxxx", "xxx", "vb");
+//$obj->student_view_product();
